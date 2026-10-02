@@ -1,11 +1,13 @@
 # tacz-cs2-datapack
 
-在 **Minecraft Java 1.20.1（Forge + TaCZ）** 里复刻 **CS2 竞技模式**的开源数据包。
+**警告：作者懒癌犯了，以下ai coding的readme暂时作为占位符，后续该readme和代码将会进行大批review。**
+
+该数据包为在 **Minecraft Java 1.20.1（Forge + TaCZ）** 里复刻 **CS2 竞技模式**的开源数据包。
+
 
 回合状态机、CS2 官方经济、MR12 赛制与加时、聊天栏购买菜单、C4 安放/拆除、HUD 与队友 X 光——
 全部用原版数据包（`.mcfunction`）实现，**不依赖任何服务端插件**。
 
-> 命名空间 `cs2d` ｜ `pack_format` 15 ｜ 337 个函数文件
 
 [English quick start ↓](#english-quick-start)
 
