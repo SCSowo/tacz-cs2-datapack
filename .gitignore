@@ -1,0 +1,40 @@
+# ---- 操作系统 / 编辑器 ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# ---- Python（tools/validate.py 的缓存）----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---- 开发过程产物（不属于公开数据包）----
+# 生成器脚本跑出来的改前备份
+_bak_before_*/
+# 测试服务端 / 日志 / 会话导出
+cs2_test/
+*.log
+logs/
+# 本地打包产物
+*.zip
+dist/
+build/
+
+# ---- 敏感文件（绝不要提交）----
+rcon.ps1
+server.properties
+ops.json
+whitelist.json
+banned-*.json
+.deploy_key/
+*.pem
+*.key
+.env

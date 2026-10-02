@@ -1,0 +1,36 @@
+# ============================================================
+# 换行符策略
+# ------------------------------------------------------------
+# 数据包是「按字节生效」的：Minecraft 逐行解析 .mcfunction，
+# 混入 CRLF 会让某些工具/编辑器产生满屏假改动，也会让跨平台协作变脏。
+# 所以这里强制：仓库里所有文本文件一律 LF。
+# ============================================================
+* text=auto eol=lf
+
+# 数据包源码 —— 明确当文本、强制 LF
+*.mcfunction  text eol=lf
+*.json        text eol=lf
+*.mcmeta      text eol=lf
+*.md          text eol=lf
+*.py          text eol=lf
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+
+# 二进制 —— 禁止 git 做任何行尾/编码转换
+*.zip   binary
+*.jar   binary
+*.png   binary
+*.jpg   binary
+*.ogg   binary
+*.nbt   binary
+
+# ============================================================
+# diff / 语言标注
+# ============================================================
+*.mcfunction  linguist-language=MCFunction
+*.mcmeta      linguist-language=JSON
+
+# tools/validate.py 不算项目主体代码，不计入语言统计
+tools/validate.py  linguist-documentation
+docs/*             linguist-documentation
+*.md               linguist-documentation
