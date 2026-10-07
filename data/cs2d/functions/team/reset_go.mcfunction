@@ -1,4 +1,4 @@
-# 全员退出阵营并重新发选队书
+# 全员退出阵营并重新发选队菜单
 team leave @a
 clear @a
 gamemode adventure @a
@@ -16,4 +16,4 @@ scoreboard players set @a cs2d.nm 0
 scoreboard players set @a cs2d.arm 0
 scoreboard players set @a cs2d.kit 0
 execute as @a run function cs2d:team/book
-tellraw @a [{"text":"[CS2] 全员已退出阵营，请打开背包里的「","color":"yellow"},{"text":"CS2 选边","color":"gold","bold":true},{"text":"」重新选边","color":"yellow"}]
+tellraw @a [{"text":"[CS2] 全员已退出阵营，请从聊天栏选边菜单重新选边","color":"yellow"}]

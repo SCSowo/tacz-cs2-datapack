@@ -3,7 +3,6 @@
 
 execute if score #state cs2d.g matches 1 run function cs2d:buy/go
 execute if score #state cs2d.g matches 2 if score #buytime cs2d.g matches 1.. run function cs2d:buy/go
-# 不在窗口内：只在真的点错时提示一次
-execute unless score #state cs2d.g matches 1 unless score #state cs2d.g matches 2 run tellraw @s [{"text": "现在不是购买时间", "color": "red"}]
-execute unless score #state cs2d.g matches 1 if score #state cs2d.g matches 2 unless score #buytime cs2d.g matches 1.. run tellraw @s [{"text": "购买时间已过（开局 20 秒后不能再买）", "color": "red"}]
+# 不在窗口内：只提示「购买时间已过」（actionbar），其它失败反馈不显示
+execute unless score #state cs2d.g matches 1 if score #state cs2d.g matches 2 unless score #buytime cs2d.g matches 1.. run title @s actionbar {"text":"购买时间已过","color":"red"}
 scoreboard players enable @s cs2d.buy

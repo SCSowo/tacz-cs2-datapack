@@ -9,13 +9,14 @@ advancement revoke @a only cs2d:kill
 function cs2d:bomb_beep
 # 掉落的 C4：销毁地面实体 + 匪方拾取
 function cs2d:c4_tick
+# 掉落的武器：锁定 + 潜行拾取
+function cs2d:wdrop/tick
 
 # ===== 快捷栏槽位强制：由 tick 标签自己计时，不再依赖 tick_second 的 schedule 链 =====
-# #ivt 每 tick +1，减掉 #invhz 后 >=0 就扫一次并归零（默认 4 tick = 0.2 秒）
+# #ivt 每 tick +1，攒到 #invhz 就扫一次并归零（默认 4 tick = 0.2 秒）
 scoreboard players add #ivt cs2d.g 1
-scoreboard players operation #ivt cs2d.g -= #invhz cs2d.g
-execute if score #ivt cs2d.g matches 0.. run function cs2d:inv_scan
-execute if score #ivt cs2d.g matches 0.. run scoreboard players set #ivt cs2d.g 0
+execute if score #ivt cs2d.g >= #invhz cs2d.g run function cs2d:inv_scan
+execute if score #ivt cs2d.g >= #invhz cs2d.g run scoreboard players set #ivt cs2d.g 0
 
 # ===== 看门狗：tick_second 连续 2 秒没心跳就重启调度链 =====
 scoreboard players add #hb cs2d.g 1

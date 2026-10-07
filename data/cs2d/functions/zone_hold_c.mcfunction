@@ -1,3 +1,3 @@
+# 冻结阶段：跑出出生区 → 上缓慢（不再拉回、不再弹提示），冻结结束时解除
 function cs2d:zone_in_c
-execute if score #zC cs2d.g matches 1 if score #in cs2d.g matches 0 if entity @e[type=marker,tag=cs2d.spawnCT,limit=1] run tp @s @e[type=marker,tag=cs2d.spawnCT,limit=1]
-execute if score #zC cs2d.g matches 1 if score #in cs2d.g matches 0 run title @s actionbar {"text":"冻结时间不能离开出生区","color":"yellow"}
+execute if score #zC cs2d.g matches 1 if score #in cs2d.g matches 0 run effect give @s minecraft:slowness 3 6 true

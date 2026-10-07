@@ -1,7 +1,7 @@
 # 退还 M4A1-S（+$2900）
 scoreboard players set @s cs2d.w1 0
 scoreboard players set @s cs2d.w1p 0
-clear @s tacz:modern_kinetic_gun{GunId:"lrl:m4a1_zero"} 1
+clear @s tacz:modern_kinetic_gun{GunId:"cs2_wt:m4a1"} 1
 scoreboard players add @s cs2d.money 2900
 scoreboard players set @s cs2d.lb 0
 scoreboard players set @s cs2d.lbp 0

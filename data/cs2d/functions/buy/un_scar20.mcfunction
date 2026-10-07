@@ -1,7 +1,7 @@
 # 退还 SCAR-20（+$5000）
 scoreboard players set @s cs2d.w1 0
 scoreboard players set @s cs2d.w1p 0
-clear @s tacz:modern_kinetic_gun{GunId:"lrl:scar_l_ocean"} 1
+clear @s tacz:modern_kinetic_gun{GunId:"tacz:scar_h"} 1
 scoreboard players add @s cs2d.money 5000
 scoreboard players set @s cs2d.lb 0
 scoreboard players set @s cs2d.lbp 0

@@ -33,3 +33,7 @@ execute if entity @s[team=CT,gamemode=!spectator] if score #state cs2d.g matches
 execute if entity @s[tag=cs2d.defusing] run function cs2d:defuse_tick
 # 蹲行基准刷新（下一 tick 用来判断是否还蹲着）
 scoreboard players operation @s cs2d.snk0 = @s cs2d.snk
+# 记录当前位置（死亡时 C4 掉落在死亡原地用；放在死亡检测之后，存的是上一 tick 的位置）
+execute store result score @s cs2d.lx run data get entity @s Pos[0]
+execute store result score @s cs2d.ly run data get entity @s Pos[1]
+execute store result score @s cs2d.lz run data get entity @s Pos[2]

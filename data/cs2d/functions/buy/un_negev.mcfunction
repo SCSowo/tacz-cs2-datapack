@@ -1,7 +1,7 @@
 # 退还 Negev（+$1700）
 scoreboard players set @s cs2d.w1 0
 scoreboard players set @s cs2d.w1p 0
-clear @s tacz:modern_kinetic_gun{GunId:"lradd:ultimax100"} 1
+clear @s tacz:modern_kinetic_gun{GunId:"tacz:rpk"} 1
 scoreboard players add @s cs2d.money 1700
 scoreboard players set @s cs2d.lb 0
 scoreboard players set @s cs2d.lbp 0

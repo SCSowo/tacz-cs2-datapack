@@ -1,7 +1,7 @@
 # 退还 R8 左轮（+$600）
 scoreboard players set @s cs2d.w2 0
 scoreboard players set @s cs2d.w2p 0
-clear @s tacz:modern_kinetic_gun{GunId:"lradd:malorian"} 1
+clear @s tacz:modern_kinetic_gun{GunId:"tacz:rhino357"} 1
 scoreboard players add @s cs2d.money 600
 scoreboard players set @s cs2d.lb 0
 scoreboard players set @s cs2d.lbp 0

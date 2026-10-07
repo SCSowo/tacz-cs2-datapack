@@ -9,7 +9,4 @@ function cs2d:swap_sides
 scoreboard players set @a cs2d.money 10000
 scoreboard players set #lossT cs2d.g 0
 scoreboard players set #lossCT cs2d.g 0
-title @a title {"text":"加时赛！","color":"yellow","bold":true}
-title @a subtitle [{"text":"先到 ","color":"gold"},{"score":{"name":"#target","objective":"cs2d.g"},"color":"yellow","bold":true},{"text":" 分 — 双方 $10000","color":"gold"}]
-tellraw @a [{"text":"===== 加时赛：先到 ","color":"gold"},{"score":{"name":"#target","objective":"cs2d.g"},"color":"yellow","bold":true},{"text":" 分获胜，双方起始资金 $10000 =====","color":"gold"}]
 playsound minecraft:ui.toast.challenge_complete master @a ~ ~ ~ 2 1

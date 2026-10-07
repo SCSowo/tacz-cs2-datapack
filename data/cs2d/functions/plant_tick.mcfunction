@@ -20,6 +20,15 @@ execute if entity @s[tag=cs2d.planting] unless score #in cs2d.g matches 1 run fu
 # --- 推进 ---
 execute if entity @s[tag=cs2d.planting] run scoreboard players add @s cs2d.plt 1
 execute if entity @s[tag=cs2d.planting] store result bossbar cs2d:plant value run scoreboard players get @s cs2d.plt
+# 剩余时间 M:SS（显示在 bossbar 标题）
+execute if entity @s[tag=cs2d.planting] run scoreboard players operation #tick cs2d.tmp = #plantt cs2d.g
+execute if entity @s[tag=cs2d.planting] run scoreboard players operation #tick cs2d.tmp -= @s cs2d.plt
+execute if entity @s[tag=cs2d.planting] run scoreboard players operation #tick cs2d.tmp /= #twenty cs2d.g
+execute if entity @s[tag=cs2d.planting] run scoreboard players operation #m cs2d.tmp = #tick cs2d.tmp
+execute if entity @s[tag=cs2d.planting] run scoreboard players operation #m cs2d.tmp /= #sixty cs2d.tmp
+execute if entity @s[tag=cs2d.planting] run scoreboard players operation #s cs2d.tmp = #tick cs2d.tmp
+execute if entity @s[tag=cs2d.planting] run scoreboard players operation #s cs2d.tmp %= #sixty cs2d.tmp
+execute if entity @s[tag=cs2d.planting] run bossbar set cs2d:plant name [{"text":"正在安放C4  ","color":"red"},{"score":{"name":"#m","objective":"cs2d.tmp"},"color":"red","bold":true},{"text":":","color":"red"},{"score":{"name":"#s","objective":"cs2d.tmp"},"color":"red","bold":true}]
 # 每 10 tick 一声滴答 + 烟尘
 execute if entity @s[tag=cs2d.planting] run scoreboard players operation #p cs2d.tmp = @s cs2d.plt
 execute if entity @s[tag=cs2d.planting] run scoreboard players operation #p cs2d.tmp %= #ten cs2d.g

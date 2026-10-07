@@ -25,12 +25,6 @@ execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add c
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.nm dummy {"text":"燃烧瓶"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.arm dummy {"text":"护甲等级"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.kills dummy {"text":"本回合击杀"}
-execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.tk dummy {"text":"总击杀"}
-execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.td dummy {"text":"总死亡"}
-execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.kd dummy {"text":"列表显示"}
-execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.dmg minecraft.custom:minecraft.damage_dealt {"text":"累计伤害"}
-execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.dmg0 dummy {"text":"伤害基线"}
-execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.dmgv dummy {"text":"本场伤害"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.mvp dummy {"text":"MVP数"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.def dummy {"text":"拆除进度"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.plt dummy {"text":"安放进度"}
@@ -39,6 +33,9 @@ execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add c
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.mv minecraft.custom:minecraft.walk_one_cm {"text":"行走距离"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.snk minecraft.custom:minecraft.sneak_time {"text":"蹲行时间"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.snk0 dummy {"text":"蹲行基准"}
+execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.lx dummy {"text":"最后位置X"}
+execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.ly dummy {"text":"最后位置Y"}
+execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.lz dummy {"text":"最后位置Z"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.mslot dummy {"text":"地图槽位(实体)"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.deaths minecraft.custom:minecraft.deaths {"text":"死亡"}
 execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add cs2d.buy trigger {"text":"购买"}
@@ -56,9 +53,8 @@ execute store success storage cs2d:tmp ok byte 1 run scoreboard objectives add c
 # 右侧计分板已停用：比分 / 存活 / 倒计时统一走顶部 bossbar cs2d:info
 # （cs2d.wins 计分板本身保留，只是不再 setdisplay 到 sidebar）
 scoreboard objectives setdisplay sidebar
-# 玩家列表（Tab）右侧显示 K/D
-scoreboard objectives setdisplay list cs2d.kd
-execute if score #kdmode cs2d.g matches 0 run scoreboard objectives setdisplay list
+# 玩家列表（Tab）右侧不再显示 K/D / 伤害（该功能无法正常显示，已移除）
+scoreboard objectives setdisplay list
 
 # 队伍
 execute store success storage cs2d:tmp ok byte 1 run team add T {"text":"T 阵营","color":"gold"}
@@ -95,7 +91,7 @@ bossbar set cs2d:info style progress
 bossbar set cs2d:info color blue
 
 # 游戏规则
-gamerule keepInventory false
+gamerule keepInventory true
 gamerule doImmediateRespawn true
 gamerule doMobSpawning false
 gamerule doDaylightCycle false
@@ -138,6 +134,8 @@ scoreboard players set #one cs2d.g 1
 scoreboard players set #two cs2d.g 2
 scoreboard players set #three cs2d.g 3
 scoreboard players set #ten cs2d.g 10
+scoreboard players set #twenty cs2d.g 20
+scoreboard players set #sixty cs2d.tmp 60
 # 开局后仍可购买的秒数（CS2 是走出购买区就不能买，这里用时间近似）：
 # /scoreboard players set #buywin cs2d.g 30 可改成 30 秒
 execute unless score #buywin cs2d.g matches 1.. run scoreboard players set #buywin cs2d.g 20
@@ -149,15 +147,6 @@ execute if score #plantt cs2d.g matches 90 run scoreboard players set #plantt cs
 # 拆除所需 tick：有拆弹钳 5 秒 = 100，无钳 10 秒 = 200（改这两个就能调）
 execute unless score #deftk cs2d.g matches 1.. run scoreboard players set #deftk cs2d.g 100
 execute unless score #deftn cs2d.g matches 1.. run scoreboard players set #deftn cs2d.g 200
-# 队友 X 光开关（1=开 0=关）：/scoreboard players set #xray cs2d.g 0 关闭
-execute unless score #xray cs2d.g matches 0.. run scoreboard players set #xray cs2d.g 1
-# 玩家列表 K/D 模式：2=击杀/死亡（12005=12杀5死，默认） 1=比值×100（240=2.40） 0=不显示
-# 玩家列表右侧显示什么：3=本场伤害（默认） 2=击杀/死亡 1=K/D 比值 0=关
-scoreboard players set #kdmode cs2d.g 3
-# 伤害换算除数：damage_dealt 单位 0.1 MC 伤害点，MC 20 血 = CS2 100 血 → ÷2；设 1 = 原版数值
-execute unless score #dmgdiv cs2d.g matches 1.. run scoreboard players set #dmgdiv cs2d.g 2
-scoreboard players set #kd100 cs2d.g 100
-scoreboard players set #kd1000 cs2d.g 1000
 # 区域半径（设置区域时的默认半径：/scoreboard players set #rad cs2d.g 5）
 execute unless score #rad cs2d.g matches 1.. run scoreboard players set #rad cs2d.g 3
 # 当前地图槽位
@@ -169,7 +158,7 @@ execute unless score #hasp1 cs2d.g matches 0.. run scoreboard players set #hasp1
 # 交换用临时 / 扩缩方向
 execute unless score #swp cs2d.g matches 0.. run scoreboard players set #swp cs2d.g 0
 execute unless score #dir cs2d.g matches 1.. run scoreboard players set #dir cs2d.g 1
-# 各阵营人数（选队书 / 管理书里动态显示）
+# 各阵营人数（选队菜单 / 管理书里动态显示）
 scoreboard players set #t cs2d.tmp 0
 scoreboard players set #c cs2d.tmp 0
 scoreboard players set #n cs2d.tmp 0
@@ -183,15 +172,17 @@ execute unless score #zB cs2d.g matches 0.. run scoreboard players set #zB cs2d.
 execute unless score #invhz cs2d.g matches 1.. run scoreboard players set #invhz cs2d.g 4
 # 局外（未开局 / 已强制停止）是否也约束：1=不许持有游戏物品 + 强制冒险模式
 execute unless score #invout cs2d.g matches 0..1 run scoreboard players set #invout cs2d.g 1
-# 是否严格执行「每格只放该放的东西」（书除外，选队书/管理书要留着翻）
+# 是否严格执行「每格只放该放的东西」（书除外，管理书要留着翻）
 execute unless score #invstrict cs2d.g matches 0..1 run scoreboard players set #invstrict cs2d.g 1
 # 扫描计时器 / tick_second 心跳（看门狗用）
 scoreboard players set #ivt cs2d.g 0
 scoreboard players set #hb cs2d.g 0
+# 选队菜单补发倒计时（tick）：到 0 就给未选阵营的玩家重发一份，然后重置为 400（20 秒）
+scoreboard players set #tmenu cs2d.g 400
 
 
 # /reload 之后 trigger 授权会丢，这里补一次（否则书本按钮点了提示"你尚无法触发这个记分项"）
 execute if entity @a run function cs2d:unlock
 
 schedule function cs2d:tick_second 1s
-tellraw @a [{"text":"[CS2] ","color":"gold"},{"text":"已加载。地图管理书：","color":"green"},{"text":"/function cs2d:book","color":"yellow","clickEvent":{"action":"suggest_command","value":"/function cs2d:book"}},{"text":"（或 /function cs2d:map/book） ；一键场地：","color":"green"},{"text":"/function cs2d:map/build_demo","color":"yellow","clickEvent":{"action":"suggest_command","value":"/function cs2d:map/build_demo"}}]
+tellraw @a [{"text":"[ Counter-Strike 2 in Minecraft ]","color":"gold"}]

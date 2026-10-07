@@ -178,7 +178,7 @@ execute unless data entity @s Inventory[{Slot:6b}] run scoreboard players set @s
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:ak47"}}] run scoreboard players set @s cs2d.w1 4
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:awp"}}] run scoreboard players set @s cs2d.w1 6
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:galilar"}}] run scoreboard players set @s cs2d.w1 3
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:m4a1"}}] run scoreboard players set @s cs2d.w1 5
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:m4a1"}}] run scoreboard players set @s cs2d.w1 5
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:mac10"}}] run scoreboard players set @s cs2d.w1 1
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:mag7"}}] run scoreboard players set @s cs2d.w1 7
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:mp9"}}] run scoreboard players set @s cs2d.w1 2
@@ -186,24 +186,24 @@ execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:sg553"}}] run sco
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:aug"}}] run scoreboard players set @s cs2d.w1 9
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:famas"}}] run scoreboard players set @s cs2d.w1 10
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"daffas_arsenal:ssg69"}}] run scoreboard players set @s cs2d.w1 11
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lrl:scar_l_ocean"}}] run scoreboard players set @s cs2d.w1 12
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:sa58"}}] run scoreboard players set @s cs2d.w1 13
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lrl:m4a1_zero"}}] run scoreboard players set @s cs2d.w1 14
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lrl:hk_mp5a5_agent"}}] run scoreboard players set @s cs2d.w1 15
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:scar_h"}}] run scoreboard players set @s cs2d.w1 12
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:g3_sg2"}}] run scoreboard players set @s cs2d.w1 13
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"cs2_wt:m4a1"}}] run scoreboard players set @s cs2d.w1 14
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:hk_mp5a5"}}] run scoreboard players set @s cs2d.w1 15
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lrl:ump45_crimson_foil"}}] run scoreboard players set @s cs2d.w1 16
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:p90"}}] run scoreboard players set @s cs2d.w1 17
 execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:pp19"}}] run scoreboard players set @s cs2d.w1 18
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"daffas_arsenal:spasi15"}}] run scoreboard players set @s cs2d.w1 19
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"daffas_arsenal:sgputer"}}] run scoreboard players set @s cs2d.w1 20
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lrl:db_long_super"}}] run scoreboard players set @s cs2d.w1 21
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:mg42"}}] run scoreboard players set @s cs2d.w1 22
-execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"lradd:ultimax100"}}] run scoreboard players set @s cs2d.w1 23
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:m870"}}] run scoreboard players set @s cs2d.w1 19
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:m1014"}}] run scoreboard players set @s cs2d.w1 20
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:db_short"}}] run scoreboard players set @s cs2d.w1 21
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:m249"}}] run scoreboard players set @s cs2d.w1 22
+execute if data entity @s Inventory[{Slot:0b,tag:{GunId:"tacz:rpk"}}] run scoreboard players set @s cs2d.w1 23
 execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"lradd:p250"}}] run scoreboard players set @s cs2d.w2 3
 execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"lrl:p320_doctor"}}] run scoreboard players set @s cs2d.w2 4
-execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"daffas_arsenal:taurus"}}] run scoreboard players set @s cs2d.w2 5
-execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"daffas_arsenal:p99_hak"}}] run scoreboard players set @s cs2d.w2 6
-execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"daffas_arsenal:taurus2"}}] run scoreboard players set @s cs2d.w2 7
-execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"lradd:malorian"}}] run scoreboard players set @s cs2d.w2 8
+execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:uzi"}}] run scoreboard players set @s cs2d.w2 5
+execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:cz75"}}] run scoreboard players set @s cs2d.w2 6
+execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:b93r"}}] run scoreboard players set @s cs2d.w2 7
+execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:rhino357"}}] run scoreboard players set @s cs2d.w2 8
 execute unless data entity @s Inventory[{Slot:0b}] run scoreboard players set @s cs2d.w1 0
 scoreboard players set @s cs2d.w1p 0
 execute if data entity @s Inventory[{Slot:1b,tag:{GunId:"cs2_wt:deagle"}}] run scoreboard players set @s cs2d.w2 2
@@ -213,17 +213,17 @@ execute if score @s cs2d.w2 matches 3 unless data entity @s Inventory[{Slot:1b,t
 scoreboard players set @s cs2d.w2p 0
 execute if score @s cs2d.w2 matches 4 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"lrl:p320_doctor"}}] run scoreboard players set @s cs2d.w2 0
 scoreboard players set @s cs2d.w2p 0
-execute if score @s cs2d.w2 matches 5 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"daffas_arsenal:taurus"}}] run scoreboard players set @s cs2d.w2 0
+execute if score @s cs2d.w2 matches 5 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:uzi"}}] run scoreboard players set @s cs2d.w2 0
 scoreboard players set @s cs2d.w2p 0
-execute if score @s cs2d.w2 matches 6 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"daffas_arsenal:p99_hak"}}] run scoreboard players set @s cs2d.w2 0
+execute if score @s cs2d.w2 matches 6 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:cz75"}}] run scoreboard players set @s cs2d.w2 0
 scoreboard players set @s cs2d.w2p 0
-execute if score @s cs2d.w2 matches 7 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"daffas_arsenal:taurus2"}}] run scoreboard players set @s cs2d.w2 0
+execute if score @s cs2d.w2 matches 7 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:b93r"}}] run scoreboard players set @s cs2d.w2 0
 scoreboard players set @s cs2d.w2p 0
-execute if score @s cs2d.w2 matches 8 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"lradd:malorian"}}] run scoreboard players set @s cs2d.w2 0
+execute if score @s cs2d.w2 matches 8 unless data entity @s Inventory[{Slot:1b,tag:{GunId:"tacz:rhino357"}}] run scoreboard players set @s cs2d.w2 0
 scoreboard players set @s cs2d.w2p 0
 
 
-# ⑥ 类型检查：每一格只允许放它该放的东西（书除外，选队书/管理书要留着翻）
+# ⑥ 类型检查：每一格只允许放它该放的东西（书除外，管理书要留着翻）
 execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:0b}] unless data entity @s Inventory[{Slot:0b,id:"tacz:modern_kinetic_gun"}] unless data entity @s Inventory[{Slot:0b,id:"minecraft:written_book"}] run item replace entity @s hotbar.0 with minecraft:air
 execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:1b}] unless data entity @s Inventory[{Slot:1b,id:"tacz:modern_kinetic_gun"}] unless data entity @s Inventory[{Slot:1b,id:"minecraft:written_book"}] run item replace entity @s hotbar.1 with minecraft:air
 execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:2b}] unless data entity @s Inventory[{Slot:2b,id:"lrtactical:melee"}] unless data entity @s Inventory[{Slot:2b,id:"minecraft:written_book"}] run item replace entity @s hotbar.2 with minecraft:air
@@ -232,3 +232,14 @@ execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:4
 execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:5b}] unless data entity @s Inventory[{Slot:5b,id:"lrtactical:throwable"}] unless data entity @s Inventory[{Slot:5b,id:"minecraft:written_book"}] run item replace entity @s hotbar.5 with minecraft:air
 execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:6b}] unless data entity @s Inventory[{Slot:6b,id:"lrtactical:throwable"}] unless data entity @s Inventory[{Slot:6b,id:"minecraft:written_book"}] run item replace entity @s hotbar.6 with minecraft:air
 execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:7b}] unless data entity @s Inventory[{Slot:7b,id:"minecraft:redstone_block"}] unless data entity @s Inventory[{Slot:7b,id:"minecraft:written_book"}] run item replace entity @s hotbar.7 with minecraft:air
+
+# ⑦ 严格去重：每格只留 cs2d_s 标签与格子号一致的物品（书除外）。
+# 类型检查只认物品 ID，槽 0/槽 1 都允许放枪，两把主武器或两把手枪就能同时留下；
+# 这里按 cs2d_s 标签硬校验，标签不对号的直接清掉，保证「一把主武器 + 一把手枪 + 一把刀」。
+execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:0b}] unless data entity @s Inventory[{Slot:0b,tag:{cs2d_s:0b}}] unless data entity @s Inventory[{Slot:0b,id:"minecraft:written_book"}] run item replace entity @s hotbar.0 with minecraft:air
+execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:1b}] unless data entity @s Inventory[{Slot:1b,tag:{cs2d_s:1b}}] unless data entity @s Inventory[{Slot:1b,id:"minecraft:written_book"}] run item replace entity @s hotbar.1 with minecraft:air
+execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:2b}] unless data entity @s Inventory[{Slot:2b,tag:{cs2d_s:2b}}] unless data entity @s Inventory[{Slot:2b,id:"minecraft:written_book"}] run item replace entity @s hotbar.2 with minecraft:air
+execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:3b}] unless data entity @s Inventory[{Slot:3b,tag:{cs2d_s:3b}}] unless data entity @s Inventory[{Slot:3b,id:"minecraft:written_book"}] run item replace entity @s hotbar.3 with minecraft:air
+execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:4b}] unless data entity @s Inventory[{Slot:4b,tag:{cs2d_s:4b}}] unless data entity @s Inventory[{Slot:4b,id:"minecraft:written_book"}] run item replace entity @s hotbar.4 with minecraft:air
+execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:5b}] unless data entity @s Inventory[{Slot:5b,tag:{cs2d_s:5b}}] unless data entity @s Inventory[{Slot:5b,id:"minecraft:written_book"}] run item replace entity @s hotbar.5 with minecraft:air
+execute if score #invstrict cs2d.g matches 1 if data entity @s Inventory[{Slot:6b}] unless data entity @s Inventory[{Slot:6b,tag:{cs2d_s:6b}}] unless data entity @s Inventory[{Slot:6b,id:"minecraft:written_book"}] run item replace entity @s hotbar.6 with minecraft:air

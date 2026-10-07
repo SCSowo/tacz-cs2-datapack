@@ -13,10 +13,20 @@ execute as @a[team=CT] run team join T @s
 execute as @a[team=cs2d_tmp] run team join CT @s
 # 比分跟着「人」走：见 cs2d:score_swap（#swapscore 设 0 可关）
 execute if score #swapscore cs2d.g matches 1 run function cs2d:score_swap
-# 装备里的阵营限定物品清掉（拆弹钳 / 手枪会由 kit 按新阵营重发）
+# 换边 = 新半场：装备全部清空（主武器 / 手枪 / 投掷物 / 护甲 / 拆弹钳），
+# 下一回合 player_reset → kit/apply 只重发「默认手枪 + 刀」，经济另走 800/10000 重置。
 scoreboard players set @a cs2d.kit 0
+scoreboard players set @a cs2d.w1 0
+scoreboard players set @a cs2d.w1p 0
 scoreboard players set @a cs2d.w2 0
 scoreboard players set @a cs2d.w2p 0
+scoreboard players set @a cs2d.nf 0
+scoreboard players set @a cs2d.nh 0
+scoreboard players set @a cs2d.ns 0
+scoreboard players set @a cs2d.nm 0
+scoreboard players set @a cs2d.arm 0
+# keepInventory=true 下原版不会代劳，手动 /function cs2d:swap_sides 也要真的清掉物品
+clear @a
 # 换边 = 新半场：经济按 CS2 重置（常规赛回到起始 $800 / 加时 $10000），连败阶梯清零
 execute if score #ot cs2d.g matches 0 run scoreboard players set @a cs2d.money 800
 execute if score #ot cs2d.g matches 1 run scoreboard players set @a cs2d.money 10000
@@ -24,6 +34,7 @@ scoreboard players set #lossT cs2d.g 0
 scoreboard players set #lossCT cs2d.g 0
 # 立刻把人送到新阵营的出生点（手动 /function cs2d:swap_sides 时也能生效）
 execute as @a[team=!] at @s run function cs2d:spawn_home
-tellraw @a [{"text":"===== 交换阵营 =====","color":"gold","bold":true},{"text":"  比分 T ","color":"gray"},{"score":{"name":"T","objective":"cs2d.wins"},"color":"gold"},{"text":" : ","color":"gray"},{"score":{"name":"CT","objective":"cs2d.wins"},"color":"blue"},{"text":" CT   先到 ","color":"gray"},{"score":{"name":"#target","objective":"cs2d.g"},"color":"yellow"},{"text":" 分获胜","color":"gray"}]
-title @a title {"text":"交换阵营","color":"yellow","bold":true}
-title @a subtitle {"text":"双方经济已重置","color":"gold"}
+title @a title {"text":"下半场","color":"yellow","bold":true}
+execute if score #ot cs2d.g matches 1 run title @a title {"text":"加时赛","color":"yellow","bold":true}
+execute as @a[team=T] run title @s subtitle {"text":"作为T方游戏","color":"gold"}
+execute as @a[team=CT] run title @s subtitle {"text":"作为CT方游戏","color":"blue"}

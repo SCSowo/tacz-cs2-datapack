@@ -1,4 +1,4 @@
-# 新玩家加入（@s = 玩家）—— 不再自动分队，先发选队书让玩家自己选
+# 新玩家加入（@s = 玩家）—— 不再自动分队，先发选队菜单让玩家自己选
 tag @s add cs2d.in
 scoreboard players set @s cs2d.money 800
 scoreboard players set @s cs2d.kit 0
@@ -20,15 +20,12 @@ scoreboard players set @s cs2d.ns 0
 scoreboard players set @s cs2d.nm 0
 scoreboard players set @s cs2d.arm 0
 scoreboard players set @s cs2d.kills 0
-execute unless score @s cs2d.tk matches 0.. run scoreboard players set @s cs2d.tk 0
-execute unless score @s cs2d.td matches 0.. run scoreboard players set @s cs2d.td 0
-execute unless score @s cs2d.kd matches 0.. run scoreboard players set @s cs2d.kd 0
 execute unless score @s cs2d.mvp matches 0.. run scoreboard players set @s cs2d.mvp 0
-# 未选阵营：等待中保持冒险模式方便翻书；比赛进行中则先旁观
+# 未选阵营：等待中保持冒险模式方便等待；比赛进行中则先旁观
 execute unless score #state cs2d.g matches 1..4 run gamemode adventure @s
 execute if score #state cs2d.g matches 1..4 run gamemode spectator @s
 execute if score #state cs2d.g matches 1..4 run tag @s add cs2d.dead
-# 发选队书
+# 发选队菜单
 function cs2d:team/book
 # 开放所有 trigger
 function cs2d:unlock

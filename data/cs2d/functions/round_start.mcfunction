@@ -25,6 +25,9 @@ kill @e[type=marker,tag=cs2d.c4drop]
 kill @e[type=item,tag=cs2d.c4drop]
 kill @e[type=block_display,tag=cs2d.c4fx]
 kill @e[type=item,nbt={Item:{tag:{cs2d_c4:1b}}}]
+# 兜底：清掉上一回合（含炸弹爆炸后延迟掉落）残留的武器/投掷物掉落
+kill @e[type=item,tag=cs2d.wdrop]
+kill @e[type=item,tag=cs2d.wdnew]
 clear @a minecraft:redstone_block{cs2d_c4:1b}
 # 固定第 8 格（hotbar.7）：主武器 1 / 手枪 2 / 刀 3 / 道具 4~7，谁都碰不到它
 execute if entity @a[team=T,gamemode=!spectator] run item replace entity @r[team=T,gamemode=!spectator] hotbar.7 with minecraft:redstone_block{cs2d_c4:1b,cs2d_s:7b,display:{Name:'{"text":"C4 炸弹","color":"red","italic":false}',Lore:['{"text":"站在包点内按住潜行（Shift）3.25 秒安放","color":"gray","italic":false}','{"text":"移动或松开蹲会中断","color":"dark_gray","italic":false}','{"text":"爆炸倒计时 40 秒","color":"dark_gray","italic":false}']}} 1
@@ -42,8 +45,6 @@ bossbar set cs2d:plant players
 bossbar set cs2d:defuse visible false
 bossbar set cs2d:defuse players
 tag @a remove cs2d.defusing
-# 队友 X 光（回合开始立刻续一次）
-function cs2d:xray
 # 发购买菜单
 execute as @a[team=!] run function cs2d:buy_menu
 # 开局自动打开：书塞主手（右键即开）+ 聊天栏快捷按钮
@@ -55,9 +56,5 @@ execute store result score #talive cs2d.g if entity @a[team=T,gamemode=!spectato
 execute store result score #calive cs2d.g if entity @a[team=CT,gamemode=!spectator]
 # 本回合击杀数清零（MVP 统计用）
 scoreboard players set @a cs2d.kills 0
-title @a title [{"text":"第 ","color":"yellow"},{"score":{"name":"#round","objective":"cs2d.g"},"color":"white"},{"text":" 回合","color":"yellow"}]
-title @a subtitle [{"text":"点聊天栏按钮购买 — 开局 20 秒内仍可购买","color":"blue"}]
+title @a title [{"text":"回合 ","color":"yellow"},{"score":{"name":"#round","objective":"cs2d.g"},"color":"white","bold":true}]
 playsound minecraft:block.note_block.pling master @a ~ ~ ~ 2 1.5
-execute if score #half cs2d.g matches 1 if score #ot cs2d.g matches 0 run title @a subtitle [{"text":"下半场 — 先到 ","color":"gold"},{"score":{"name":"#target","objective":"cs2d.g"},"color":"yellow","bold":true},{"text":" 分获胜","color":"gold"}]
-execute if score #ot cs2d.g matches 1 run title @a subtitle [{"text":"加时赛 — 先到 ","color":"gold"},{"score":{"name":"#target","objective":"cs2d.g"},"color":"yellow","bold":true},{"text":" 分获胜","color":"gold"}]
-execute as @a[team=T,gamemode=!spectator] if score @s cs2d.c4 matches 1.. run title @s subtitle {"text":"你携带 C4","color":"red","bold":true}

@@ -3,6 +3,7 @@ scoreboard players set #buytime cs2d.g 0
 scoreboard players set #state cs2d.g 3
 # 中断所有进行中的安放
 tag @a remove cs2d.planting
+effect clear @a minecraft:slowness
 scoreboard players set @a cs2d.plt 0
 bossbar set cs2d:plant visible false
 bossbar set cs2d:plant players
@@ -46,22 +47,15 @@ kill @e[type=marker,tag=cs2d.c4drop]
 kill @e[type=item,tag=cs2d.c4drop]
 kill @e[type=block_display,tag=cs2d.c4fx]
 kill @e[type=item,nbt={Item:{tag:{cs2d_c4:1b}}}]
+kill @e[type=item,tag=cs2d.wdrop]
+kill @e[type=item,tag=cs2d.wdnew]
 bossbar set cs2d:defuse visible false
 bossbar set cs2d:defuse players
 # --- 公告 ---
-execute if score #reason cs2d.g matches 2 run title @a title {"text":"恐怖分子获胜","color":"gold","bold":true}
-execute if score #reason cs2d.g matches 2 run title @a subtitle {"text":"炸弹爆炸","color":"gray"}
-execute if score #reason cs2d.g matches 3 run title @a title {"text":"反恐精英获胜","color":"blue","bold":true}
-execute if score #reason cs2d.g matches 3 run title @a subtitle {"text":"炸弹已拆除","color":"gray"}
-execute if score #reason cs2d.g matches 4 run title @a title {"text":"反恐精英获胜","color":"blue","bold":true}
-execute if score #reason cs2d.g matches 4 run title @a subtitle {"text":"时间耗尽","color":"gray"}
-execute if score #reason cs2d.g matches 1 if score #w cs2d.g matches 1 run title @a title {"text":"恐怖分子获胜","color":"gold","bold":true}
-execute if score #reason cs2d.g matches 1 if score #w cs2d.g matches 1 run title @a subtitle {"text":"反恐精英被歼灭","color":"gray"}
-execute if score #reason cs2d.g matches 1 if score #w cs2d.g matches 2 run title @a title {"text":"反恐精英获胜","color":"blue","bold":true}
-execute if score #reason cs2d.g matches 1 if score #w cs2d.g matches 2 run title @a subtitle {"text":"恐怖分子被歼灭","color":"gray"}
+execute if score #w cs2d.g matches 1 run title @a title {"text":"恐怖分子获胜","color":"gold","bold":true}
+execute if score #w cs2d.g matches 2 run title @a title {"text":"反恐精英获胜","color":"blue","bold":true}
 execute if score #w cs2d.g matches 1 run playsound minecraft:entity.player.levelup master @a[team=T] ~ ~ ~ 2 1.2
 execute if score #w cs2d.g matches 2 run playsound minecraft:entity.player.levelup master @a[team=CT] ~ ~ ~ 2 1.2
 execute if score #w cs2d.g matches 1 run playsound minecraft:block.note_block.bass master @a[team=CT] ~ ~ ~ 2 0.8
 execute if score #w cs2d.g matches 2 run playsound minecraft:block.note_block.bass master @a[team=T] ~ ~ ~ 2 0.8
-title @a subtitle [{"text":"比分 ","color":"gray"},{"score":{"name":"T","objective":"cs2d.wins"},"color":"gold"},{"text":" : ","color":"gray"},{"score":{"name":"CT","objective":"cs2d.wins"},"color":"blue"}]
 playsound minecraft:ui.toast.challenge_complete master @a ~ ~ ~ 2 1

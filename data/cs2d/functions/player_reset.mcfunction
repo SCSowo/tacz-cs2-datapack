@@ -12,8 +12,6 @@ execute unless score @s cs2d.kit matches 0.. run scoreboard players set @s cs2d.
 execute unless score @s cs2d.lb matches 0.. run scoreboard players set @s cs2d.lb 0
 execute unless score @s cs2d.lbp matches 0.. run scoreboard players set @s cs2d.lbp 0
 execute unless score @s cs2d.kills matches 0.. run scoreboard players set @s cs2d.kills 0
-execute unless score @s cs2d.tk matches 0.. run scoreboard players set @s cs2d.tk 0
-execute unless score @s cs2d.td matches 0.. run scoreboard players set @s cs2d.td 0
 scoreboard players set @s cs2d.plt 0
 tag @s remove cs2d.planting
 # 回合重置（@s = 玩家）：装备由 kit/apply 按计分板重发，备弹随之刷新

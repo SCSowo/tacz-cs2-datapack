@@ -604,35 +604,35 @@ CS2 里剩下那一大半枪（AUG、SG553、FAMAS、M4A1-S、SSG08、SCAR-20、
 | AK-47 | $2700 | T | `cs2_wt:ak47` | cs2_wt（原样） |
 | Galil AR | $1800 | T | `cs2_wt:galilar` | cs2_wt |
 | **SG 553** | $3000 | T | `lradd:sg553` | lradd |
-| **G3SG1** | $5000 | T | `lradd:sa58` | lradd（FAL 战斗步枪顶连狙） |
-| M4A4 | $3000 | CT | `cs2_wt:m4a1` | cs2_wt |
-| **M4A1-S** | $2900 | CT | `lrl:m4a1_zero` | lrl |
+| **G3SG1** | $5000 | T | `lradd:g3_sg2` | lradd（G3 SG/2 狙击型） |
+| M4A4 | $3000 | CT | `tacz:m4a1` | tacz（M4A1 无消音） |
+| **M4A1-S** | $2900 | CT | `cs2_wt:m4a1` | cs2_wt（消音 M4A1） |
 | **FAMAS** | $2050 | CT | `lradd:famas` | lradd（三连发 BURST） |
 | **AUG** | $3300 | CT | `lradd:aug` | lradd |
-| **SCAR-20** | $5000 | CT | `lrl:scar_l_ocean` | lrl |
+| **SCAR-20** | $5000 | CT | `tacz:scar_h` | tacz（SCAR-H） |
 | AWP | $4750 | 双方 | `cs2_wt:awp` | cs2_wt |
 | **SSG 08** | $1700 | 双方 | `daffas_arsenal:ssg69` | daffas（SSG 69 栓动狙） |
 | MAC-10 | $1050 | T | `cs2_wt:mac10` | cs2_wt |
 | MP9 | $1250 | CT | `cs2_wt:mp9` | cs2_wt |
-| **MP5-SD** | $1500 | 双方 | `lrl:hk_mp5a5_agent` | lrl |
+| **MP5-SD** | $1500 | 双方 | `tacz:hk_mp5a5` | tacz（MP5A5） |
 | **UMP-45** | $1200 | 双方 | `lrl:ump45_crimson_foil` | lrl |
 | **P90** | $2350 | 双方 | `lradd:p90` | lradd |
 | **PP-野牛** | $1400 | 双方 | `lradd:pp19` | lradd |
 | MAG-7 | $1300 | CT | `cs2_wt:mag7` | cs2_wt |
-| **Nova** | $1050 | 双方 | `daffas_arsenal:spasi15` | daffas（SPAS-12） |
-| **XM1014** | $2000 | 双方 | `daffas_arsenal:sgputer` | daffas |
-| **截短霰弹枪** | $1100 | T | `lrl:db_long_super` | lrl（双管） |
-| **M249** | $5200 | 双方 | `lradd:mg42` | lradd |
-| **Negev** | $1700 | 双方 | `lradd:ultimax100` | lradd |
+| **Nova** | $1050 | 双方 | `tacz:m870` | tacz（M870 泵动） |
+| **XM1014** | $2000 | 双方 | `tacz:m1014` | tacz（M1014） |
+| **截短霰弹枪** | $1100 | T | `tacz:db_short` | tacz（短管双管） |
+| **M249** | $5200 | 双方 | `tacz:m249` | tacz（M249） |
+| **Negev** | $1700 | 双方 | `tacz:rpk` | tacz（RPK） |
 | Glock-18 | 默认 | T | `cs2_wt:glock_18` | cs2_wt |
 | USP-S | 默认 | CT | `cs2_wt:usp` | cs2_wt |
 | Desert Eagle | $700 | 双方 | `cs2_wt:deagle` | cs2_wt |
 | **P250** | $300 | 双方 | `lradd:p250` | lradd |
 | **Five-SeveN** | $500 | CT | `lrl:p320_doctor` | lrl（P320） |
-| **Tec-9** | $500 | T | `daffas_arsenal:taurus` | daffas |
-| **CZ75-Auto** | $500 | 双方 | `daffas_arsenal:p99_hak` | daffas（全自动） |
-| **双持贝瑞塔** | $300 | 双方 | `daffas_arsenal:taurus2` | daffas |
-| **R8 左轮** | $600 | 双方 | `lradd:malorian` | lradd |
+| **Tec-9** | $500 | T | `tacz:uzi` | tacz（UZI） |
+| **CZ75-Auto** | $500 | 双方 | `tacz:cz75` | tacz（CZ 75） |
+| **双持贝瑞塔** | $300 | 双方 | `tacz:b93r` | tacz（B93R 三连发） |
+| **R8 左轮** | $600 | 双方 | `tacz:rhino357` | tacz（.357 Rhino） |
 
 **没做的**：Zeus x27（电击枪，一次性，枪包里没有对应物）。
 

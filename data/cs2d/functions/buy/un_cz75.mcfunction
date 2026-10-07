@@ -1,7 +1,7 @@
 # 退还 CZ75-Auto（+$500）
 scoreboard players set @s cs2d.w2 0
 scoreboard players set @s cs2d.w2p 0
-clear @s tacz:modern_kinetic_gun{GunId:"daffas_arsenal:p99_hak"} 1
+clear @s tacz:modern_kinetic_gun{GunId:"tacz:cz75"} 1
 scoreboard players add @s cs2d.money 500
 scoreboard players set @s cs2d.lb 0
 scoreboard players set @s cs2d.lbp 0

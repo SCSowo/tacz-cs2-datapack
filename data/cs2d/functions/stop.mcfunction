@@ -60,5 +60,4 @@ scoreboard players set T cs2d.wins 0
 scoreboard players set CT cs2d.wins 0
 # 公告
 title @a title {"text":"已强制停止","color":"red","bold":true}
-title @a subtitle {"text":"执行 /function cs2d:start 才会重新开始","color":"gray"}
 playsound minecraft:block.note_block.bass master @a ~ ~ ~ 2 1

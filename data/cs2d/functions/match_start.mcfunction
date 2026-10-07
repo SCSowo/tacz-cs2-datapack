@@ -27,11 +27,6 @@ scoreboard players set @a cs2d.nm 0
 scoreboard players set @a cs2d.arm 0
 scoreboard players set @a cs2d.kit 0
 scoreboard players set @a cs2d.kills 0
-# K/D 按「本场」统计，开新比赛清零（CS2 每场记分板从 0 开始）
-scoreboard players set @a cs2d.tk 0
-scoreboard players set @a cs2d.td 0
-scoreboard players set @a cs2d.kd 0
-execute as @a run function cs2d:dmg_reset
 scoreboard players set @a cs2d.mvp 0
 tellraw @a [{"text":"===== 比赛开始！MR12 —— 先到 ","color":"yellow"},{"score":{"name":"#target","objective":"cs2d.g"},"color":"gold"},{"text":" 分获胜 =====","color":"yellow"}]
 bossbar set cs2d:info visible true

@@ -1,5 +1,5 @@
 # 地图操作：1=保存 2=加载 3=删除 4=重绘高光 5=清除高光 6=列表 7=取管理书 8=命名
-# 9=自动分队 10=全员重选阵营 11=发选队书
+# 9=自动分队 10=全员重选阵营 11=发选队菜单
 execute if score @s cs2d.mapop matches 1 run function cs2d:map/save
 execute if score @s cs2d.mapop matches 2 run function cs2d:map/load
 execute if score @s cs2d.mapop matches 3 run function cs2d:map/delete

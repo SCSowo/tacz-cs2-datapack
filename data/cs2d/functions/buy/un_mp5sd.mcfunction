@@ -1,7 +1,7 @@
 # 退还 MP5-SD（+$1500）
 scoreboard players set @s cs2d.w1 0
 scoreboard players set @s cs2d.w1p 0
-clear @s tacz:modern_kinetic_gun{GunId:"lrl:hk_mp5a5_agent"} 1
+clear @s tacz:modern_kinetic_gun{GunId:"tacz:hk_mp5a5"} 1
 scoreboard players add @s cs2d.money 1500
 scoreboard players set @s cs2d.lb 0
 scoreboard players set @s cs2d.lbp 0

@@ -6,7 +6,7 @@ execute if score @s cs2d.snk > @s cs2d.snk0 run scoreboard players set #snk cs2d
 # 身上有没有 C4（clear 0 = 只统计不移除；不能用 nbt=Inventory[...] 列表匹配）
 execute store result score @s cs2d.c4 run clear @s minecraft:redstone_block{cs2d_c4:1b} 0
 # 包点没设过 → 提示一次（打 tag 防刷屏）
-execute if score #zA cs2d.g matches 0 if score #zB cs2d.g matches 0 unless entity @s[tag=cs2d.warnz] run tellraw @s {"text":"尚未设置包点范围：站到包点上执行 /function cs2d:map/set_zone_a","color":"red"}
+execute if score #zA cs2d.g matches 0 if score #zB cs2d.g matches 0 unless entity @s[tag=cs2d.warnz] run tellraw @s {"text":"尚未设置包点范围：请用管理书圈选 A/B 包点","color":"red"}
 execute if score #zA cs2d.g matches 0 if score #zB cs2d.g matches 0 run tag @s add cs2d.warnz
 execute if score #zA cs2d.g matches 1 run tag @s remove cs2d.warnz
 execute if score #zB cs2d.g matches 1 run tag @s remove cs2d.warnz
